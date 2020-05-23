@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/edittext_selector"/>      //默认背景图片，可以设置颜色
+    <item android:state_pressed="true" android:drawable="@android:color/darker_gray"/>//点击是背景
+    <item android:state_pressed="false" android:drawable="@android:color/white"/>//未点击时 的背景
+</selector>

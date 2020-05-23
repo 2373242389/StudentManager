@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.studentmanager">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- 获取GSM（2g）、WCDMA（联通3g）等网络状态的信息 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- 获取wifi网络状态的信息 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- 保持CPU 运转，屏幕和键盘灯有可能是关闭的,用于文件上传和下载 -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- 获取sd卡写的权限，用于文件上传和下载 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- 允许读取手机状态 用于创建BmobInstallation -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
+        tools:ignore="ProtectedPermissions" />
+    <!--通知震动-->
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <!--推送所需的权限-->
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+
+    <application
+        android:name=".Application.BmobIMApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.NoActionBar">
+        <meta-data android:name="com.baidu.lbsapi.API_KEY"
+            android:value="Aot3P2lQvGyApAquTyXzFi7RZbvLgoFQ"/>
+        <meta-data android:name="Bmob_APP_KEY"
+            android:value="0dfaf8f6ed181173d1961ccde23b9da3"/>
+        <activity android:name=".activity.student.StuPPTShowActivity"/>
+        <activity android:name=".activity.student.CoursePPTShowActivity"/>
+        <activity android:name=".activity.student.StuPPTCourseActivity"/>
+        <activity android:name=".activity.updatePasswordActivity"/>
+        <activity android:name=".activity.teacher.TeacherPPTCourseActivity"/>
+        <activity android:name=".activity.teacher.UploadCourseFileActivity"/>
+        <activity android:name=".activity.teacher.TeacherConcernCourseActivity"/>
+        <activity android:name=".activity.teacher.TeacherContactActivity"/>
+        <activity android:name=".activity.teacher.JoinCourseStudentActivity"/>
+        <activity android:name=".activity.student.StuHomeworkLevelActivity"/>
+        <activity android:name=".activity.teacher.CorrectCommitHomework"/>
+        <activity android:name=".activity.teacher.HomeworkCommitActivity"/>
+        <activity android:name=".activity.teacher.THomeworkActivity"/>
+        <activity android:name=".activity.teacher.TArrCourseActivity"/>
+        <activity android:name=".activity.student.StuLookHomeworkActivity"/>
+        <activity android:name=".activity.teacher.TeacherArrHomeworkAtivity"/>
+        <activity android:name=".activity.PlusImageActivity"/>
+        <activity android:name=".activity.student.AddCourseActivity" />
+        <activity android:name=".activity.student.StuSignActivity"/>
+        <activity android:name=".activity.student.CourseSearchActivity"/>
+        <activity android:name=".activity.teacher.TeacherStartSignActivity" />
+        <activity android:name=".activity.teacher.TeacherRegisterActivity" />
+        <activity android:name=".activity.StuActivity"/>
+        <activity android:name=".activity.SlideRecyclerViewActivity" />
+        <activity android:name=".activity.teacher.TeacherNewsActivity"/>
+        <activity android:name=".activity.student.StuRegisterActivity" />
+        <activity android:name=".activity.student.StuContactActivity"/>
+        <activity android:name=".activity.teacher.TeacherTabActivity"/>
+        <activity android:name=".activity.student.StuTabActivity"/>
+        <activity android:name=".activity.ChatActivity"/>
+        <activity android:name=".activity.student.StuCommitHomeWorkActivity"/>
+        <activity
+            android:name=".activity.LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <service
+            android:label="PushService"
+            android:name="cn.bmob.push.lib.service.PushService"
+            android:process=":bmobpush"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="cn.bmob.push.lib.service.PushService"/>
+            </intent-filter>
+        </service>
+
+        <!-- 用于进程保活 -->
+        <service
+            android:name="cn.bmob.push.lib.service.PushNotifyService"
+            android:process=":bmobpush" >
+        </service>
+
+        <receiver android:name="cn.bmob.push.PushReceiver" >
+            <intent-filter>
+                <!-- 系统启动完成后会调用 -->
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <!-- 解锁完成后会调用 -->
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <!-- 监听网络连通性 -->
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+
+        <!-- 第3步中创建的消息接收器，在这里进行注册 -->
+        <receiver android:name="com.example.studentmanager.BroadcastReceiver.MyPushMessageReceiver">
+            <intent-filter >
+                <action android:name="cn.bmob.push.action.MESSAGE"/>
+            </intent-filter>
+        </receiver>
+
+        <meta-data
+            android:name="BMOB_PUSH_CLASS"
+            android:value="你自己定义的消息推送广播接收器">
+        </meta-data>
+
+
+        <!-- 接收心跳和唤醒的广播，要和PushService运行在同个进程 -->
+        <receiver
+            android:name="cn.bmob.push.PushNotifyReceiver"
+            android:process=":bmobpush" >
+            <intent-filter>
+                <!-- 接收心跳广播的action -->
+                <action android:name="cn.bmob.push.action.HEARTBEAT" />
+                <!-- 接收唤醒广播的action -->
+                <action android:name="cn.bmob.push.action.NOTIFY" />
+            </intent-filter>
+        </receiver>
+
+
+        <service android:name="com.baidu.location.f" android:enabled="true"
+            android:process=":remote"></service>
+        <!--TODO 集成：1.5、配置IM SDK需要的广播和服务-->
+        <receiver android:name="cn.bmob.newim.core.ConnectChangeReceiver" >
+            <intent-filter>
+                <action android:name="cn.bmob.action.RECONNECT" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+            </intent-filter>
+        </receiver>
+        <service
+            android:name="cn.bmob.newim.core.service.BmobIMService"
+            android:process=":bmobcore" />
+        <service
+            android:name="cn.bmob.newim.core.service.NotifyService"
+            android:process=":bmobcore" />
+        <service android:name="cn.bmob.newim.core.service.ReConnectService" />
+        <service android:name="cn.bmob.newim.core.service.HeartBeatService" />
+        <provider
+            android:name="cn.bmob.v3.util.BmobContentProvider"
+            android:authorities="com.example.studentmanager.BmobContentProvider" />
+    </application>
+
+</manifest>

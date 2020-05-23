@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <com.example.studentmanager.View.BackTitleView
+        android:id="@+id/appbar_signed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    
+    <com.baidu.mapapi.map.MapView
+        android:id="@+id/bmapView"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:clickable="false"/>
+    <TextView
+        android:id="@+id/postion_text"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+    <EditText
+        android:id="@+id/course_command_edit"
+        android:textColor="#bcbaba"
+        android:textSize="14sp"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp"
+        android:paddingLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入签到口令"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="81dp" />
+        <Button
+            android:textColor="@color/white"
+            android:background="@color/colorAccent"
+            android:text="开始签到"
+            android:id="@+id/stu_start_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+</LinearLayout>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <Button
+        android:id="@+id/teacherArr_Homework"
+        android:layout_width="match_parent"
+        android:text="布置作业"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/teacherCorrect_Homework"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="批改作业"/>
+    <Button
+        android:id="@+id/courseFile"
+        android:text="上传课件"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

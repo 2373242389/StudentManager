@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="35dp"
+    android:layout_margin="20dp"
+    android:background="@drawable/seek_border"
+    android:orientation="horizontal">
+
+    <!-- 搜索框信息 -->
+    <EditText
+        android:id="@+id/search_edittext"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_marginLeft="10dp"
+        android:hint="搜索"
+        android:drawableLeft="@mipmap/seek"
+        android:gravity="center_vertical"
+        android:textColorHint="#95A1AA"
+        android:imeOptions="actionDone"
+        android:inputType="text"
+        android:maxLines="1"
+        android:textSize="17sp"
+        android:textColor="@color/black"
+        android:background="@null"/>
+</LinearLayout>

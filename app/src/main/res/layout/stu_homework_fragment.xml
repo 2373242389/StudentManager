@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="未提交作业:"
+            android:textColor="@color/black" />
+        <TextView
+            android:id="@+id/noCommitCount"
+            android:layout_width="wrap_content"
+            android:textColor="@color/black"
+            android:text="0"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <Button
+        android:layout_marginTop="10dp"
+        android:id="@+id/stu_look_Homework"
+        android:layout_width="match_parent"
+        android:text="查看作业"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:background="#3f51b6"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:layout_marginTop="20dp"
+        android:id="@+id/stu_check_Homework"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="查看作业评价"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:background="#3f51b6"/>
+    
+    <Button
+        android:layout_marginTop="20dp"
+        android:id="@+id/stu_downloadPPT"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="查看课件"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:background="#3f51b6"/>
+</LinearLayout>

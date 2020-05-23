@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/create_user_dialog_view"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/line_color"
+    android:minWidth="200dp"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:paddingBottom="30dp"
+    android:paddingTop="30dp">
+
+    <EditText
+        android:id="@+id/course_name"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edittext_selector"
+        android:textColorHint="@color/blue"
+        android:hint="课程名称"
+        android:textColor="@color/black"
+        android:minHeight="45dp"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/course_code"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/edittext_selector"
+        android:hint="课程密码"
+        android:textColorHint="@color/blue"
+        android:textColor="@color/black"
+        android:minHeight="45dp"
+        android:textSize="18sp" />
+    <EditText
+        android:id="@+id/course_people_number"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/edittext_selector"
+        android:hint="课程人数"
+        android:textColorHint="@color/blue"
+        android:textColor="@color/black"
+        android:minHeight="45dp"
+        android:textSize="18sp" />
+    <EditText
+        android:id="@+id/course_desc"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/edittext_selector"
+        android:textColorHint="@color/blue"
+        android:hint="课程描述:输入参加班级"
+        android:textColor="@color/black"
+        android:minHeight="45dp"
+        android:textSize="18sp" />
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginTop="5dp">
+
+    <Button
+        android:id="@+id/btn_course_save"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/colorPrimary"
+        android:background="@drawable/button_selector"
+        android:text="保存" />
+
+    <Button
+        android:id="@+id/btn_course_cancel"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="70dp"
+        android:textColor="@color/colorPrimary"
+        android:background="@drawable/button_selector"
+        android:text="取消" />
+</LinearLayout>
+
+</LinearLayout>

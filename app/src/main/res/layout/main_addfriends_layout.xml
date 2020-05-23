@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFAFA">
+    <com.example.studentmanager.View.BackTitleView
+        android:id="@+id/search_title"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"/>
+    <LinearLayout
+        android:id="@+id/add_friends_btn"
+        android:layout_marginTop="50dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <Button
+            android:id="@+id/add_stu"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:drawableLeft="@mipmap/stu"
+            android:text="找同学"
+            android:textColor="@color/black"
+            android:background="@color/white"
+            android:drawableRight="@mipmap/rightjiantou"
+            />
+        <include layout="@layout/include_divide_layout"></include>
+        <Button
+            android:id="@+id/add_teacher"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:drawableLeft="@mipmap/teacher"
+            android:text="找老师"
+            android:textColor="@color/black"
+            android:background="@color/white"
+            android:drawableRight="@mipmap/rightjiantou"
+            />
+    </LinearLayout>
+</RelativeLayout>

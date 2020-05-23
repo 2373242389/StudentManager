@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.example.studentmanager.View.BackTitleView
+        android:id="@+id/appbar_signed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:id="@+id/sign_command_edit"
+        android:textColor="#bcbaba"
+        android:textSize="14sp"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp"
+        android:paddingLeft="10dp"
+        android:layout_below="@+id/appbar_signed"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入签到口令"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="81dp" />
+    <LinearLayout
+        android:id="@+id/layout_se"
+        android:weightSum="2"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/sign_command_edit"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:textColor="@color/white"
+            android:background="@color/colorAccent"
+            android:text="开始签到"
+            android:layout_weight="1"
+            android:layout_below="@id/sign_command_edit"
+            android:id="@+id/start_signed_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+        <Button
+            android:textColor="@color/white"
+            android:background="@color/colorAccent"
+            android:text="结束签到"
+            android:layout_weight="1"
+            android:id="@+id/end_signed_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="160dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/signed_stu_num"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="签到名单"
+            android:textColor="@color/white" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/noSign_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+</RelativeLayout>
